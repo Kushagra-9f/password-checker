@@ -3,10 +3,9 @@ import string
 
 st.set_page_config(
     page_title="Password Strength Checker",
-    page_icon="🔐"
 )
 
-st.title("🔐 Password Strength Checker")
+st.title("Password Strength Checker")
 st.write("Check your password strength below.")
 
 st.info("Use sample passwords only. Do not enter your real password.")
@@ -64,9 +63,9 @@ if password:
 
     for criterion, passed in criteria.items():
         if passed:
-            st.success(f"✅ {criterion}")
+            st.success(f"done {criterion}")
         else:
-            st.error(f"❌ {criterion}")
+            st.error(f"error {criterion}")
 
     # Suggestions
     st.subheader("Suggestions for Improvement")
@@ -82,13 +81,13 @@ if password:
         for suggestion in missing:
             st.write(f"- {suggestion}")
     else:
-        st.success("Excellent! All five criteria are satisfied.")
+        st.success("All five criteria are satisfied.")
 
     # Final message
     if strength == "Weak":
-        st.error("Your password is weak. Please improve it.")
+        st.error("Your password is weak.")
     elif strength == "Moderate":
-        st.warning("Your password is moderate. Try improving it.")
+        st.warning("Your password is moderate.")
     else:
         st.success("Your password meets all five criteria!")
 
